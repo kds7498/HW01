@@ -4,34 +4,49 @@
 
 using namespace std;
 
-//double tot(){
-//	double tot = 0;
-//	vector<int> num(size);
-//	for (int i = 0; i < ; i++) {
-//		cout << "배열 Num[" << i << "]의 값을 입력해주세요 : ";  cin >> num[i];
-//		tot += num[i];
-//	}
-//}
+int tot(int arr[], int size) {
+	int sum = 0;
+	for (int i = 0; i < size; i++) {
+		sum += arr[i];
+	}
+
+
+	return sum;
+}
+
+int avg(int arr[], int size) {
+
+	int sum = tot(arr, size);
+
+	return (double)sum / size;
+}
 
 
 
 int main() {
-	double tot = 0;
-	double avg = 0;
-	int size;
-	cout << "원하는 배열 크기를 입력하세요: ";
-	cin >> size;
 
-	vector<int> num(size);
+	const int size = 5;
+	/*cout << "원하는 배열 크기를 입력하세요: ";
+	cin >> size;*/
+
+	int num[size];
 
 	for (int i = 0; i < size; i++) {
 		cout << "배열 Num[" << i << "]의 값을 입력해주세요 : ";  cin >> num[i];
-		tot += num[i];
+		tot(num, size);
 	}
-	avg = tot / size;
 
-	cout << "입력받은 값의 총합 : " << tot << endl;
-	cout << "입력받은 값의 평균 : " << avg << endl;
+	//for (int i = 0; i < size; i++) {
+	//	cout << "배열 Num[" << i << "]의 값을 입력해주세요 : ";  cin >> num[i];
+	//	tot += num[i];
+	//}
+	//avg = tot / size;
+
+	int total = tot(num, size);
+	double average = avg(num, size);
+
+	cout << "입력받은 값의 총합 : " << total << endl;
+	cout << "입력받은 값의 평균 : " << average << endl;
 
 	int choice;
 	int temp = 0;
