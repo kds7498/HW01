@@ -14,7 +14,7 @@ int tot(int arr[], int size) {
 	return sum;
 }
 
-int avg(int arr[], int size) {
+double avg(int arr[], int size) {
 
 	int sum = tot(arr, size);
 
